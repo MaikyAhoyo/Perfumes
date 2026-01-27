@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PerfumeStore - Your Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              primary: "#1e293b", // Slate 800
+              secondary: "#fbbf24", // Amber 400
+              accent: "#f43f5e", // Rose 500
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-slate-800 font-sans flex flex-col min-h-screen">
+    <nav
+      class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div
+            class="bg-secondary p-1.5 rounded-lg group-hover:rotate-12 transition-transform"
+          >
+            <i class="ph-fill ph-drop text-primary text-xl"></i>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-primary"
+            >Perfume<span class="text-secondary">Store</span></span
+          >
+        </a>
+
+        <ul class="flex items-center gap-6">
+          <li>
+            <a
+              href="index.html"
+              class="text-slate-600 hover:text-secondary font-medium transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="cart.html"
+              class="relative text-primary transition-colors p-2"
+            >
+              <i class="ph-fill ph-shopping-cart text-2xl"></i>
+              <span
+                id="cart-count"
+                class="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden"
+                >0</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="pt-28 pb-20 flex-grow container mx-auto px-6">
+      <h1 class="text-3xl font-bold text-primary mb-8">Your Shopping Cart</h1>
+
+      <div class="flex flex-col lg:flex-row gap-12" id="cart-container">
+        <div class="flex-1 space-y-6" id="cart-items">
+          <div
+            class="flex flex-col items-center justify-center py-20 text-slate-400"
+          >
+            <i class="ph-duotone ph-shopping-bag text-6xl mb-4"></i>
+            <p class="text-lg">Your cart is empty.</p>
+            <a
+              href="index.html"
+              class="mt-4 text-secondary font-bold hover:underline"
+              >Go to catalogue</a
+            >
+          </div>
+        </div>
+
+        <div class="lg:w-96">
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 sticky top-28"
+          >
+            <h2 class="text-xl font-bold text-primary mb-6">Order Summary</h2>
+
+            <div class="space-y-4 text-sm text-slate-600 mb-6">
+              <div class="flex justify-between">
+                <span>Subtotal</span>
+                <span id="subtotal-price" class="font-medium">$0.00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Taxes (16%)</span>
+                <span id="tax-price" class="font-medium">$0.00</span>
+              </div>
+              <div
+                class="border-t border-slate-100 pt-4 flex justify-between text-lg font-bold text-primary"
+              >
+                <span>Total</span>
+                <span id="total-price">$0.00</span>
+              </div>
+            </div>
+
+            <button
+              onclick="checkout()"
+              class="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-secondary hover:text-primary transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/20 mb-3"
+            >
+              Checkout <i class="ph-bold ph-arrow-right"></i>
+            </button>
+
+            <button
+              onclick="clearCart()"
+              class="w-full text-slate-400 hover:text-red-500 text-sm font-medium transition-colors flex items-center justify-center gap-1"
+            >
+              <i class="ph ph-trash"></i> Empty Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-primary text-gray-300 py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <span class="text-xl font-bold text-white">
+                Perfume<span class="text-secondary">Store</span>
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed text-gray-400">
+              Your trusted destination for authentic and exclusive fragrances.
+              Delivering elegance directly to your door.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-secondary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#catalogue"
+                  class="hover:text-secondary transition-colors"
+                  >Catalogue</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >Men</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >Women</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold mb-6">Follow Us</h4>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"
+              >
+                <i class="ph-fill ph-instagram-logo text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"
+              >
+                <i class="ph-fill ph-facebook-logo text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"
+              >
+                <i class="ph-fill ph-twitter-logo text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-slate-700 pt-8 text-center text-sm text-gray-500"
+        >
+          <p>&copy; 2026 PerfumeStore. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+  </body>
+</html>

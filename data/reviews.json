@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "perfume_id": 1,
+    "user_name": "Juan Perez",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Juan",
+    "rating": 5,
+    "comment": "A modern classic. Smells incredibly good and lasts all day.",
+    "date": "2023-11-20"
+  },
+  {
+    "id": 2,
+    "perfume_id": 1,
+    "user_name": "Maria Garcia",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Maria",
+    "rating": 4,
+    "comment": "I love how it smells on my husband, but it's a bit expensive.",
+    "date": "2023-11-15"
+  },
+  {
+    "id": 3,
+    "perfume_id": 2,
+    "user_name": "Carlos Ruiz",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos",
+    "rating": 4,
+    "comment": "Fresh and powerful. People always ask me what perfume I'm wearing.",
+    "date": "2023-11-18"
+  },
+  {
+    "id": 4,
+    "perfume_id": 3,
+    "user_name": "Ana Torres",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Ana",
+    "rating": 5,
+    "comment": "The scent of a lifetime. It never goes out of style.",
+    "date": "2023-10-25"
+  },
+  {
+    "id": 5,
+    "perfume_id": 5,
+    "user_name": "Pedro Sanchez",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Pedro",
+    "rating": 4,
+    "comment": "Ideal for a night out. Very striking.",
+    "date": "2023-11-05"
+  }
+]

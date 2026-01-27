@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Bleu de Chanel",
+    "brand": "Chanel",
+    "price": 120,
+    "release_year": 2010,
+    "description": "A woody aromatic fragrance for men. It features notes of citrus, mint, pink pepper, grapefruit, cedar, jasmine, and incense.",
+    "category": ["Woody", "Aromatic"],
+    "rating": 4.5,
+    "image": "img/bleu-perfume.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sauvage",
+    "brand": "Dior",
+    "price": 115,
+    "release_year": 2015,
+    "description": "A radically fresh composition, dictated by a name that has the ring of a manifesto. That was the way François Demachy, Dior Perfumer-Creator, wanted it: raw and noble all at once.",
+    "category": ["Fresh", "Spicy"],
+    "rating": 4.3,
+    "image": "img/sauvage-perfume.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Acqua di Gio",
+    "brand": "Giorgio Armani",
+    "price": 95,
+    "release_year": 1996,
+    "description": "Inspired by the beauty of Pantellerie, where he spent his vacation, Armani created the aroma of Aqua di Gio for men and women. The fragrance for men is a scent of freedom, full of wind and water.",
+    "category": ["Aquatic", "Fresh"],
+    "rating": 4.7,
+    "image": "img/acqua-di-gio-perfume.jpg"
+  },
+  {
+    "id": 4,
+    "name": "One Million",
+    "brand": "Paco Rabanne",
+    "price": 90,
+    "release_year": 2008,
+    "description": "The house of Paco Rabanne's fragrance for men is announced as a fresh and sensual blend of notes, with glittery shine of gold, for which creator Paco Rabanne says: 'In all civilizations and religions gold has always managed to seduce people'.",
+    "category": ["Spicy", "Leather"],
+    "rating": 4.2,
+    "image": "img/one-million-perfume.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Eros",
+    "brand": "Versace",
+    "price": 85,
+    "release_year": 2012,
+    "description": "Love, Passion, Beauty and Desire are the key concepts of the new men's fragrance by Versace. As Greek mythology and classic sculpture have characterized the Versace world from the beginning, so the perfection of the male body is evoked with an allusion to Eros, the god of love.",
+    "category": ["Aromatic", "Fougere"],
+    "rating": 4.4,
+    "image": "img/eros-perfume.jpg"
+  },
+  {
+    "id": 6,
+    "name": "La Nuit de l'Homme",
+    "brand": "Yves Saint Laurent",
+    "price": 105,
+    "release_year": 2009,
+    "description": "A fresh oriental fragrance, made of tensions and olfactory clashes, intended for a man who is sure of his charm and confident in his seductive power.",
+    "category": ["Spicy", "Woody"],
+    "rating": 4.6,
+    "image": "img/la-nuit-perfume.jpg"
+  }
+]
