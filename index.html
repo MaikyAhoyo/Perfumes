@@ -114,7 +114,61 @@
                 Our Fragrances
               </h2>
             </div>
-            <!-- Aqui deben ir los filtros -->
+            <div class="flex flex-wrap items-center gap-4 mt-4 md:mt-0">
+              <label
+                class="flex items-center gap-2 cursor-pointer bg-white px-4 py-2.5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-secondary/50 transition-all duration-300 group select-none"
+              >
+                <input
+                  type="checkbox"
+                  id="filter-favorites"
+                  class="peer sr-only"
+                />
+                <div
+                  class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-accent peer-checked:bg-accent flex items-center justify-center transition-colors"
+                >
+                  <i
+                    class="ph-fill ph-heart text-white text-[10px] opacity-0 peer-checked:opacity-100 transition-opacity"
+                  ></i>
+                </div>
+                <span
+                  class="text-sm font-semibold text-slate-500 group-hover:text-primary peer-checked:text-primary transition-colors"
+                  >Favorites Only</span
+                >
+              </label>
+
+              <div class="relative group">
+                <select
+                  id="filter-category"
+                  class="appearance-none bg-white pl-4 pr-10 py-2.5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-secondary/50 transition-all duration-300 text-sm font-semibold text-slate-600 focus:outline-none focus:ring-2 focus:ring-secondary/20 cursor-pointer w-full md:w-48"
+                >
+                  <option value="">All Categories</option>
+                </select>
+                <i
+                  class="ph-bold ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-secondary transition-colors pointer-events-none"
+                ></i>
+              </div>
+
+              <div
+                class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-secondary/50 transition-all duration-300"
+              >
+                <i class="ph-bold ph-currency-dollar text-secondary"></i>
+                <input
+                  type="number"
+                  id="filter-min-price"
+                  placeholder="Min"
+                  min="0"
+                  class="w-16 outline-none text-sm font-semibold text-primary placeholder-slate-300 border-b-2 border-transparent focus:border-secondary transition-colors bg-transparent"
+                />
+                <span class="text-slate-300 font-bold">-</span>
+                <input
+                  type="number"
+                  id="filter-max-price"
+                  placeholder="Max"
+                  min="0"
+                  class="w-16 outline-none text-sm font-semibold text-primary placeholder-slate-300 border-b-2 border-transparent focus:border-secondary transition-colors bg-transparent"
+                />
+              </div>
+            </div>
           </div>
 
           <div

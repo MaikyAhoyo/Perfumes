@@ -64,5 +64,38 @@
     "category": ["Spicy", "Woody"],
     "rating": 4.6,
     "image": "img/la-nuit-perfume.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Aventus",
+    "brand": "Creed",
+    "price": 350,
+    "release_year": 2010,
+    "description": "The exceptional Aventus was inspired by the dramatic life of a historic emperor, celebrating strength, power and success. Introduced in 2010 and crafted by the deft hand of Sixth Generation Master Perfumer Olivier Creed in collaboration with his son Erwin.",
+    "category": ["Fruity", "Chypre"],
+    "rating": 4.9,
+    "image": "img/aventus-perfume.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Le Male",
+    "brand": "Jean Paul Gaultier",
+    "price": 88,
+    "release_year": 1995,
+    "description": "Intensive and sensible, modern, and comfortably warm, masculine and gentle... Le Male is a magnetically attractive fragrance which seduces with its uniqueness; it is built on contrasts: traditional and bold, fresh and mild, strong and sensual.",
+    "category": ["Oriental", "Fougere"],
+    "rating": 4.4,
+    "image": "img/le-male-perfume.jpg"
+  },
+  {
+    "id": 9,
+    "name": "The One for Men",
+    "brand": "Dolce & Gabbana",
+    "price": 92,
+    "release_year": 2008,
+    "description": "The One for Men is a concentrate of elegance and sensuality. A fragrance that is both classic and modern, vibrant and engaging. A spicy, oriental perfume developed from the harmony of tobacco notes and refined spices.",
+    "category": ["Woody", "Spicy"],
+    "rating": 4.7,
+    "image": "img/the-one-perfume.jpg"
   }
 ]
