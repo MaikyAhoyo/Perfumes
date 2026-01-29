@@ -53,9 +53,9 @@ function renderPerfumes() {
 
   if (!container) return;
 
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const user = Auth.getUser();
+  const favorites = user ? user.favorites : [];
 
-  // Filter Values
   const showFavorites = document.getElementById("filter-favorites")?.checked;
   const selectedCategory = document.getElementById("filter-category")?.value;
   const minPriceInput = document.getElementById("filter-min-price")?.value;
@@ -65,17 +65,13 @@ function renderPerfumes() {
   const maxPrice = maxPriceInput ? parseFloat(maxPriceInput) : null;
 
   const filtered = perfumes.filter((p) => {
-    // Favorites Filter
-    if (showFavorites && !favorites.some((fav) => fav.id === p.id)) {
-      return false;
+    if (showFavorites) {
+      if (!user) return false;
+      if (!favorites.includes(p.id)) return false;
     }
-
-    // Category Filter
     if (selectedCategory && !p.category.includes(selectedCategory)) {
       return false;
     }
-
-    // Price Filter
     if (minPrice !== null && p.price < minPrice) return false;
     if (maxPrice !== null && p.price > maxPrice) return false;
 
@@ -98,7 +94,7 @@ function renderPerfumes() {
 
   container.innerHTML = filtered
     .map((perfume) => {
-      const isFav = favorites.some((fav) => fav.id === perfume.id);
+      const isFav = favorites.includes(perfume.id);
       const btnClasses = isFav
         ? "bg-red-500 text-white opacity-100"
         : "bg-white/90 backdrop-blur-md text-gray-500 hover:bg-red-500 hover:text-white opacity-0 group-hover:opacity-100";
@@ -110,7 +106,7 @@ function renderPerfumes() {
 
            <button onclick="toggleFavorite(${
              perfume.id
-           })" class="absolute top-3 right-3 px-3 py-3 rounded-full text-xl font-bold transition-all duration-300 shadow-sm flex items-center gap-1 hover:cursor-pointer ${btnClasses}">
+           })" class="absolute top-3 right-3 px-3 py-3 rounded-full text-xl font-bold transition-all duration-300 shadow-sm flex items-center gap-1 hover:cursor-pointer ${btnClasses}" title="${isFav ? "Remove from Favorites" : "Add to Favorites"}">
              <i class="ph-fill ph-heart"></i>
            </button>
         </div>
@@ -179,22 +175,9 @@ function clearFilters() {
 }
 
 function toggleFavorite(perfumeId) {
-  const perfume = perfumes.find((p) => p.id === perfumeId);
-  if (!perfume) return;
-
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  const index = favorites.findIndex((item) => item.id === perfumeId);
-
-  if (index !== -1) {
-    favorites.splice(index, 1);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+  const result = Auth.toggleFavorite(perfumeId);
+  if (result !== null) {
     renderPerfumes();
-    // alert(`"${perfume.name}" remove from favorites.`);
-  } else {
-    favorites.push(perfume);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    renderPerfumes();
-    // alert(`"${perfume.name}" added to favorites.`);
   }
 }
 
@@ -228,31 +211,6 @@ function updateCartCount() {
   } else {
     countBadge.classList.add("hidden");
     countBadge.classList.remove("flex");
-  }
-}
-
-function checkUserSession() {
-  const session = localStorage.getItem("user_session");
-  const userLink = document.getElementById("user-link");
-  const userStatus = document.getElementById("user-status");
-
-  if (session && userLink) {
-    // User is logged in
-    const user = JSON.parse(session);
-    if (userStatus) userStatus.classList.remove("hidden");
-
-    // Optional: Change link to logout or profile?
-    // For now, let's just make it clear they are logged in.
-    userLink.title = `Logged in as ${user.name}`;
-
-    // Simple logout handler via click (optional, but good for "simulated" feel)
-    userLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (confirm(`Logout from ${user.name}?`)) {
-        localStorage.removeItem("user_session");
-        window.location.reload();
-      }
-    });
   }
 }
 
